@@ -1,0 +1,668 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-image: var(--background-image);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  font-family: IBM Plex Mono;
+}
+
+.header-dark-decoration {
+  right: 40px;
+  top: 10px;
+  position: absolute;
+  display: var(--header-dark-decoration);
+  align-items: center;
+  flex-direction: row;
+  color: #ff0070;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+}
+
+.header-dark-decoration::after {
+  content: ' ';
+  box-shadow: 0 0 4px 2px #ff0070;
+  margin-inline-start: 10px;
+  display: block;
+  left: 34px;
+  position: absolute;
+  border: 5px solid #ff0070;
+  border-radius: 50%;
+}
+
+.header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px; /* Высота границы */
+  border-top: 1px solid var(--decorations-color); /* Верхняя граница */
+  border-right: 1px solid var(--decorations-color); /* Правая граница */
+}
+
+.header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 25px;
+  height: 25px; /* Высота границы */
+  border-bottom: 1px solid var(--decorations-color); /* Верхняя граница */
+  border-left: 1px solid var(--decorations-color); /* Правая граница */
+}
+
+.header-title {
+  align-self: flex-start;
+  display: block;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 95.7px;
+  text-align: left;
+  color: var(--header-footer-title-color);
+  text-shadow: 4px 4px 0 var(--shadows-color);
+  margin-block-start: 4.2rem;
+  margin-inline-start: 3vw;
+}
+
+.header__theme-menu {
+  margin-block-start: 20vw;
+  margin-inline-end: 2.7vw;
+  align-self: flex-end;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  color: var(--decorations-color);
+  background-color: inherit;
+}
+
+.header__theme-menu-button {
+  padding: 1px 13px 4px 13px;
+  background-color: inherit;
+  border: none;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.header__theme-menu-button:hover::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--hover-color);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+.header__theme-menu-button_active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 1px solid var(--decorations-color);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.header__theme-menu-button:focus-visible::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-block-end: 1px solid var(--decorations-color);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.header__theme-menu-button_type_auto {
+  margin-block-start: 15px;
+  margin-block-end: 11px;
+}
+
+.header-text {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  align-self: flex-end;
+  width: clamp(355px, calc(50vw - 20px), 491px);
+  display: block;
+  margin: min(3.4rem, 60px) 10px 0px 10px;
+}
+
+body {
+  background: var(--background-color);
+}
+
+main {
+  font-family: IBM Plex Mono;
+  text-align: left;
+}
+
+.section-title {
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--sections-title);
+  width: calc(100vw - 20px);
+}
+
+.section-point-name {
+  margin-block-start: 1.2rem;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--sections-point);
+  background-color: var(--main-color);
+  width: calc(100vw - 20px);
+}
+
+.section-text {
+  margin-block-start: 0.65rem;
+  display: inline-block;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--sections-text);
+  width: calc(100vw - 20px);
+}
+
+.section-subpoint-name {
+  margin-block-start: 1.25rem;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--sections-point);
+  background-color: var(--main-color);
+  width: calc(100vw - 20px);
+}
+
+.section-why {
+  margin-block-start: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-what {
+  margin-block-start: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-how {
+  margin-block-start: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.decorated-text {
+  position: relative;
+  text-shadow: 2px 2px 0 var(--shadows-color);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.decorated-text:hover::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  border-bottom: 1px solid var(--sections-text); /* Верхняя граница */
+}
+
+.decorated-text:focus-visible::after {
+  content: '';
+  width: calc(100% + 2px);
+  height: calc(100% - 2px);
+  top: 1px;
+
+  padding-left: 5px;
+  display: block;
+  position: absolute;
+  border: 1px solid var(--sections-text); /* Верхняя граница */
+}
+
+.section-images .section-point-name {
+  grid-area: images-title;
+  width: 100%;
+}
+
+.sunset-image {
+  grid-area: sunset;
+}
+
+.ice-cream-image {
+  grid-area: ice-cream;
+}
+
+.tape-image {
+  grid-area: tape;
+}
+
+.books-image {
+  grid-area: books;
+}
+
+.street-image {
+  grid-area: street;
+}
+
+.section-image {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.section-images {
+  margin: 1.8rem 10px 0px 10px;
+  display: grid;
+
+  grid-template-areas:
+    'images-title '
+    'sunset'
+    'ice-cream'
+    'tape'
+    'books'
+    'street';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  justify-content: center;
+}
+
+.footer {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin-block-start: 40px;
+}
+
+.footer-title {
+  font-family: IBM Plex Mono;
+  font-weight: 700;
+  line-height: 95.7px;
+  text-align: left;
+  align-self: flex-start;
+  display: block;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-align: center;
+  color: var(--header-footer-title-color);
+  text-shadow: 2px 2px 0 var(--shadows-color);
+
+  margin: auto;
+  padding-block-start: 43vh;
+}
+
+.footer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 25px;
+  height: 25px; /* Высота границы */
+  border-bottom: 1px solid var(--decorations-color); /* Верхняя граница */
+  border-left: 1px solid var(--decorations-color); /* Правая граница */
+}
+
+.footer::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px; /* Высота границы */
+  border-top: 1px solid var(--decorations-color); /* Верхняя граница */
+  border-right: 1px solid var(--decorations-color); /* Правая граница */
+}
+
+@media (width >=768px) {
+  .header-dark-decoration {
+    right: 50px;
+    top: 20px;
+  }
+  .header::after {
+    right: 20px;
+    top: 20px;
+  }
+
+  .header::before {
+    left: 20px;
+    bottom: 20px;
+  }
+  .header__theme-menu {
+    margin-block-start: 19vh;
+    margin-inline-end: 2.7vw;
+  }
+
+  .header-title {
+    margin-block-start: 17vh;
+    margin-inline-start: 0vw;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header-text {
+    margin: 15.7vh 20px 0px 20px;
+  }
+
+  .section-why .section-subpoint-name,
+  .section-why .section-title,
+  .section-why .section-point-name,
+  .section-why .section-text {
+    width: 100%;
+    margin-block-start: 0px;
+  }
+
+  .section-why .section-point-name:nth-of-type(1) {
+    grid-area: point1_1;
+  }
+
+  .section-why .section-point-name:nth-of-type(2) {
+    grid-area: point1_2;
+    margin-block-start: 10px;
+  }
+
+  .section-why .section-text:nth-of-type(1) {
+    grid-area: text1_1;
+  }
+
+  .section-why .section-text:nth-of-type(2) {
+    grid-area: text1_2;
+  }
+
+  .section-why .section-title:nth-of-type(1) {
+    grid-area: title1_1;
+  }
+
+  .section-why {
+    gap: 10px 20px;
+    margin-block-start: 3.8rem;
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+    display: grid;
+    grid-template-areas:
+      'title1_1 point1_1'
+      'title1_1 text1_1'
+      'title1_1 point1_2'
+      'title1_1 text1_2';
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    align-items: start;
+  }
+
+  .section-what .section-subpoint-name,
+  .section-what .section-title,
+  .section-what .section-point-name,
+  .section-what .section-text {
+    width: calc(100vw - 40px);
+  }
+
+  .section-what .section-title {
+    width: 30vw;
+    align-self: flex-start;
+    margin-inline-start: 20px;
+    margin-block-start: 1.8rem;
+  }
+
+  .section-how .section-subpoint-name,
+  .section-how .section-title,
+  .section-how .section-point-name,
+  .section-how .section-text {
+    width: 100%;
+    margin-block-start: 0px;
+  }
+
+  .section-how .section-subpoint-name {
+    margin-block-start: 10px;
+  }
+
+  .section-how .section-point-name:nth-of-type(1) {
+    grid-area: point2_1;
+  }
+
+  .section-how .section-subpoint-name:nth-of-type(1) {
+    grid-area: subpoint2_1;
+  }
+  .section-how .section-subpoint-name:nth-of-type(2) {
+    grid-area: subpoint2_2;
+  }
+  .section-how .section-subpoint-name:nth-of-type(3) {
+    grid-area: subpoint2_3;
+  }
+  .section-how .section-subpoint-name:nth-of-type(4) {
+    grid-area: subpoint2_4;
+  }
+  .section-how .section-subpoint-name:nth-of-type(5) {
+    grid-area: subpoint2_5;
+  }
+
+  .section-how .section-text:nth-of-type(1) {
+    grid-area: text2_1;
+  }
+
+  .section-how .section-text:nth-of-type(2) {
+    grid-area: text2_2;
+  }
+
+  .section-how .section-text:nth-of-type(3) {
+    grid-area: text2_3;
+  }
+
+  .section-how .section-text:nth-of-type(4) {
+    grid-area: text2_4;
+  }
+
+  .section-how .section-text:nth-of-type(5) {
+    grid-area: text2_5;
+  }
+
+  .section-how .section-title:nth-of-type(1) {
+    grid-area: title2_1;
+  }
+
+  .section-how {
+    gap: 10px 20px;
+    margin-block-start: 5rem;
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+    display: grid;
+    grid-template-areas:
+      'title2_1 point2_1'
+      'title2_1 subpoint2_1'
+      'title2_1 text2_1'
+      'title2_1 subpoint2_2'
+      'title2_1 text2_2'
+      'title2_1 subpoint2_3'
+      'title2_1 text2_3'
+      'title2_1 subpoint2_4'
+      'title2_1 text2_4'
+      'title2_1 subpoint2_5'
+      'title2_1 text2_5';
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    align-items: start;
+  }
+
+  .section-images {
+    margin: 3.9rem 20px 0px 20px;
+    grid-template-columns: auto;
+    grid-template-areas:
+      'images-title images-title images-title'
+      'sunset sunset ice-cream'
+      'tape books ice-cream'
+      'tape street street';
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .footer {
+    margin-block-start: 60px;
+  }
+  .footer::before {
+    left: 20px;
+    bottom: 20px;
+  }
+  .footer::after {
+    right: 20px;
+    top: 20px;
+  }
+
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    padding-block-start: 45vh;
+  }
+}
+
+@media (width >=1024px) {
+  .header__theme-menu {
+    margin-block-start: 3vh;
+    align-self: center;
+    margin-inline-end: 0vw;
+
+    flex-direction: row;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    background-color: inherit;
+  }
+
+  .header__theme-menu-button_type_auto {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    gap: 10px;
+  }
+
+  .header-title {
+    margin-block-start: 37.6vh;
+    margin-inline-start: 0vw;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header-text {
+    margin: 17vh 20px 0px 20px;
+  }
+
+  .header::before {
+    left: 2vw;
+    bottom: 2vw;
+  }
+
+  .section-why {
+    grid-template-columns: 30.7vw 1fr;
+  }
+
+  .section-what .section-subpoint-name,
+  .section-what .section-title,
+  .section-what .section-point-name,
+  .section-what .section-text {
+    width: 100%;
+    margin-block-start: 0px;
+  }
+
+  .section-what .section-point-name:nth-of-type(1) {
+    grid-area: point3_1;
+  }
+
+  .section-what .section-point-name:nth-of-type(2) {
+    grid-area: point3_2;
+  }
+
+  .section-what .section-point-name:nth-of-type(3) {
+    grid-area: point3_3;
+  }
+
+  .section-what .section-text:nth-of-type(1) {
+    grid-area: text3_1;
+  }
+
+  .section-what .section-text:nth-of-type(2) {
+    grid-area: text3_2;
+  }
+
+  .section-what .section-text:nth-of-type(3) {
+    grid-area: text3_3;
+  }
+
+  .section-what .section-title:nth-of-type(1) {
+    grid-area: title3_1;
+    margin: 0;
+  }
+
+  .section-what .section-point-name {
+    margin-block-start: 10px;
+  }
+  .section-what {
+    gap: 10px 20px;
+    margin-block-start: 5rem;
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+    display: grid;
+    grid-template-areas:
+      'title3_1 . .'
+      'point3_1 point3_2 point3_3'
+      'text3_1 text3_2 text3_3';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: start;
+  }
+
+  .section-how {
+    grid-template-columns: 30.7vw 1fr;
+  }
+
+  .section-images {
+    margin: 3.7rem 20px 0px 20px;
+  }
+
+  .footer-title {
+    padding-block-start: 44vh;
+  }
+}
+
+.page {
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}

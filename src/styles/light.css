@@ -1,0 +1,37 @@
+/*
+  Специально для светлой темы при наличии класса.
+  Здесь окажутся стили, которые нужно переопределить принудительно,
+  переключая тему
+*/
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-color: #ff8dcb;
+    --background-image: url(../images/cover-image-light.png);
+    --text-color: #353430;
+    --shadows-color: #ff8dcb;
+    --decorations-color: #353430;
+    --header-footer-title-color: #ffc2e6;
+    --header-dark-decoration: none;
+    --background-color: #fff1f7;
+    --hover-color: rgba(50, 49, 45, 0.4);
+    --sections-title: #353430;
+    --sections-point: #353430;
+    --sections-text: #353430;
+  }
+}
+
+.page.theme_light {
+  --main-color: #ff8dcb;
+  --background-image: url(../images/cover-image-light.png);
+  --text-color: #353430;
+  --shadows-color: #ff8dcb;
+  --decorations-color: #353430;
+  --header-footer-title-color: #ffc2e6;
+  --header-dark-decoration: none;
+  --background-color: #fff1f7;
+  --hover-color: rgba(50, 49, 45, 0.4);
+  --sections-title: #353430;
+  --sections-point: #353430;
+  --sections-text: #353430;
+}

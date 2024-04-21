@@ -1,0 +1,22 @@
+/*
+  Переменные для вашего проекта
+  и их переопределение под различные устройства
+*/
+
+:root {
+  --main-color: #ff0070;
+  --background-image: url(../images/cover-image-dark.png);
+  --text-point-color: #000028;
+  --text-color: #000028;
+  --header-footer-title-color: #db00ff;
+  --shadows-color: #ff0070;
+
+  --background-color: #000028;
+  --decorations-color: #ff0070;
+  --header-dark-decoration: flex;
+  --hover-color: rgba(255, 0, 112, 0.4);
+
+  --sections-title: #ff0070;
+  --sections-point: #000028;
+  --sections-text: #f1b2ce;
+}
