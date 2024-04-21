@@ -67,6 +67,7 @@ function watchFiles() {
     gulp.watch(['src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
   }
  
+  
   const build = gulp.series(clean, gulp.parallel(html, css, images));
   const watchapp = gulp.parallel(build, watchFiles, serve);
 
