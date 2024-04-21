@@ -67,7 +67,7 @@ function watchFiles() {
     gulp.watch(['src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
   }
  
-  
+
   const build = gulp.series(clean, gulp.parallel(html, css, images));
   const watchapp = gulp.parallel(build, watchFiles, serve);
 
@@ -75,7 +75,8 @@ function watchFiles() {
   exports.css = css;
   exports.clean = clean;
   exports.images = images; 
+  exports.build = build;
 
-
+  
   exports.watchapp = watchapp; 
   exports.default = watchapp; 
